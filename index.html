@@ -2,18 +2,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Happy Valentine Vidya</title>
+<title>Surprise</title>
+
 <style>
 body {
     margin: 0;
     padding: 0;
-    text-align: center;
     font-family: Arial, sans-serif;
-
-    background-color: #ffe6f0;
-    background-image: url("https://stock.adobe.com/search?k=new+100+dollar+bill&asset_id=247958558");
+    overflow: hidden;
 }
 
+/* Background Image */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://rebeccas.com/products/one-hundred-dollar-bill-wallets-12-count?srsltid=AfmBOoq5f_rUwHTYSHGuHWtiAF4MGJl7tvP-yf7TzUbDqbCOfq7q5je8");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+/* Slight dark overlay */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(144, 76, 76, 0.35);
+    z-index: -1;
+}
+
+/* Question */
+.question {
+    text-align: center;
+    margin-top: 80px;
+    color: white;
+    font-size: 30px;
+    text-shadow: 2px 2px 10px black;
+}
+
+/* Buttons */
 button {
     padding: 15px 30px;
     font-size: 20px;
@@ -24,67 +53,52 @@ button {
 }
 
 #yesBtn {
-    background-color: #ff4d6d;
-    color: white;
+    background-color: #16d709;
+    color: rgb(245, 239, 239);
 }
 
 #noBtn {
-    background-color: #999;
+    background-color: #b11010;
     color: white;
     position: absolute;
 }
 
+/* Surprise text centered like printed */
 #surprise {
     display: none;
-    position: relative;
-}
-
-.money-container {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-.money-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.money-text {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 60px;
+    font-size: 65px;
     font-weight: bold;
-    color: red;
-    text-shadow: 2px 2px 10px white;
+    color: gold;
+    text-align: center;
+    text-shadow: 3px 3px 25px black;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Will You Be My Valentine? ❤️</h1>
+<div class="background"></div>
+<div class="overlay"></div>
 
-<button id="yesBtn" onclick="showSurprise()">Yes</button>
-<button id="noBtn" onmouseover="moveButton()">No</button>
+<div class="question">
+    Do You want be with Me potti? ❤️ <br>
+    <button id="yesBtn" onclick="showSurprise()">Yes</button>
+    <button id="noBtn" onmouseover="moveButton()">No</button>
+</div>
 
 <div id="surprise">
-    <div class="money-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/US_%24100_Series_2009_Obverse.jpg">
-        <div class="money-text">
-            Happy Valentine’s Day My Potti ❤️
-        </div>
-    </div>
+    Happy Valentine’s Day Potti Chakodi(Vidya) ❤️
 </div>
 
 <script>
 function moveButton() {
     var btn = document.getElementById("noBtn");
-    var x = Math.random() * (window.innerWidth - 100);
-    var y = Math.random() * (window.innerHeight - 50);
+    var x = Math.random() * (window.innerWidth - 120);
+    var y = Math.random() * (window.innerHeight - 60);
     btn.style.left = x + "px";
     btn.style.top = y + "px";
 }
